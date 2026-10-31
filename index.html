@@ -291,6 +291,19 @@ h1 em{display:block;font-family:var(--f-text);font-style:italic;font-size:.9em;l
 .tl-events{list-style:none;margin:0;padding:0;display:grid;gap:10px}
 .tl-ev{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:baseline}
 .tl-ev span:first-child{min-width:0}
+.ph-strip{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.ph-thumb{padding:0;border:1px solid var(--rule);border-radius:10px;overflow:hidden;width:64px;height:64px;cursor:pointer;background:var(--surface);transition:transform .15s,border-color .15s}
+.ph-thumb:hover{transform:translateY(-2px);border-color:var(--accent)}
+.ph-thumb img{display:block;width:100%;height:100%;object-fit:cover}
+.ph-note{font:500 .7rem var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin-left:4px}
+.lightbox{border:0;padding:0;background:transparent;max-width:min(94vw,1100px);max-height:94vh;color:var(--ink)}
+.lightbox::backdrop{background:rgb(5 10 20 / .82)}
+.lb-fig{margin:0;background:var(--surface);border-radius:14px;overflow:hidden}
+.lb-fig img{display:block;max-width:100%;max-height:78vh;width:auto;height:auto;margin:0 auto}
+.lb-bar{display:flex;align-items:center;gap:12px;padding:12px 16px}
+.lb-cap{flex:1;min-width:0;font-size:.92rem}
+.lb-bar button{border:1px solid var(--rule);background:transparent;color:var(--ink);border-radius:999px;width:36px;height:36px;cursor:pointer;font-size:1rem}
+.lb-bar button:hover{border-color:var(--accent)}
 .tag{font:500 .64rem/1.6 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;padding:1px 7px;border-radius:4px;border:1px solid var(--rule);color:var(--ink-soft);white-space:nowrap}
 .tag-award{border-color:var(--t-corporate)}
 
@@ -533,7 +546,8 @@ h1 em{display:block;font-family:var(--f-text);font-style:italic;font-size:.9em;l
           <li class="tl-ev"><span>Fellow, C-EENRG, University of Cambridge</span><span class="tag">Appointment</span></li>
           <li class="tl-ev"><span>Associate Academic Fellow, Asia-Pacific Centre for Environmental Law, National University of Singapore</span><span class="tag">Appointment</span></li>
         </ul></li>
-        <li class="tl-row"><span class="tl-year">2026</span><ul class="tl-events"><li class="tl-ev"><span>PhD, Hughes Hall, University of Cambridge (Supervisor: Prof Jorge E Viñuales; Advisor: Prof Harro van Asselt)</span><span class="tag">Degree</span></li></ul></li>
+        <li class="tl-row"><span class="tl-year">2026</span><ul class="tl-events"><li class="tl-ev"><span>PhD, Hughes Hall, University of Cambridge (Supervisor: Prof Jorge E Viñuales; Advisor: Prof Harro van Asselt)</span><span class="tag">Degree</span></li>
+          <li class="ph-strip" aria-label="Photos from Cambridge"><button class="ph-thumb" type="button" data-i="0" aria-label="View photo: With Sir Laurie Bristow, President of Hughes Hall and former British Ambassador to Afghanistan"><img src="photos/cam-bristow-thumb.jpg" alt="" width="64" height="64" loading="lazy"></button><button class="ph-thumb" type="button" data-i="1" aria-label="View photo: PhD graduation, Senate House, University of Cambridge, 25 July 2026"><img src="photos/cam-senate-house-thumb.jpg" alt="" width="64" height="64" loading="lazy"></button><button class="ph-thumb" type="button" data-i="2" aria-label="View photo: In doctoral scarlet at Hughes Hall, a Cambridge tradition for new doctors"><img src="photos/cam-scarlet-thumb.jpg" alt="" width="64" height="64" loading="lazy"></button><span class="ph-note">Photos</span></li></ul></li>
         <li class="tl-row"><span class="tl-year">2024</span><ul class="tl-events">
           <li class="tl-ev"><span>Visiting Fellow, School of Law, University of Reading</span><span class="tag">Appointment</span></li>
           <li class="tl-ev"><span>Inaugural MOE-START Overseas PhD Scholar, Singapore University of Social Sciences</span><span class="tag tag-award">Award</span></li>
@@ -631,6 +645,9 @@ h1 em{display:block;font-family:var(--f-text);font-style:italic;font-size:.9em;l
     </div>
   </section>
 </main>
+<dialog class="lightbox" id="lightbox" aria-label="Photo">
+  <figure class="lb-fig"><img id="lb-img" alt=""><div class="lb-bar"><button type="button" id="lb-prev" aria-label="Previous photo">‹</button><figcaption class="lb-cap" id="lb-cap"></figcaption><button type="button" id="lb-next" aria-label="Next photo">›</button><button type="button" id="lb-close" aria-label="Close">✕</button></div></figure>
+</dialog>
 
 <script type="application/json" id="site-data">
 {
@@ -1066,6 +1083,22 @@ h1 em{display:block;font-family:var(--f-text);font-style:italic;font-size:.9em;l
   $$('[data-years]').forEach(function(el){ el.textContent = range; });
   /* ---------- Email (assembled in the browser to keep it away from spam bots) ---------- */
   (function(){ var e = document.getElementById('email'); if (e && e.dataset.u) e.textContent = e.dataset.u + '@' + e.dataset.d; })();
+
+  /* ---------- Photo lightbox ---------- */
+  (function(){
+    var PH = [{"src":"photos/cam-bristow.jpg","cap":"With Sir Laurie Bristow, President of Hughes Hall and former British Ambassador to Afghanistan"},
+{"src":"photos/cam-senate-house.jpg","cap":"PhD graduation, Senate House, University of Cambridge, 25 July 2026"},
+{"src":"photos/cam-scarlet.jpg","cap":"In doctoral scarlet at Hughes Hall, a Cambridge tradition for new doctors"}];
+    var dlg = document.getElementById('lightbox'), img = $('#lb-img'), cap = $('#lb-cap'), cur = 0;
+    if (!dlg || !dlg.showModal) return;
+    function show(i){ cur = (i + PH.length) % PH.length; img.src = PH[cur].src; img.alt = PH[cur].cap; cap.textContent = PH[cur].cap; }
+    $$('.ph-thumb').forEach(function(b){ b.addEventListener('click', function(){ show(+b.dataset.i); dlg.showModal(); }); });
+    $('#lb-prev').addEventListener('click', function(){ show(cur - 1); });
+    $('#lb-next').addEventListener('click', function(){ show(cur + 1); });
+    $('#lb-close').addEventListener('click', function(){ dlg.close(); });
+    dlg.addEventListener('click', function(e){ if (e.target === dlg) dlg.close(); });
+    dlg.addEventListener('keydown', function(e){ if (e.key === 'ArrowLeft') show(cur - 1); if (e.key === 'ArrowRight') show(cur + 1); });
+  })();
 
   /* ---------- Visitors ---------- */
   (function(){
