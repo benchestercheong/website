@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dr Ben Chester Cheong · Contact</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Contact details for Dr Ben Chester Cheong.">
+<meta name="theme-color" content="#0B63CE">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;800&display=swap">
+<style>
+:root{--bg:#F5F8FC;--surface:#FFFFFF;--ink:#0E1A2B;--soft:#4A5872;--rule:#D9E1EC;--accent:#0B63CE;--on-accent:#FFFFFF;color-scheme:light}
+@media (prefers-color-scheme: dark){:root{--bg:#0B1220;--surface:#121B2E;--ink:#E6ECF5;--soft:#9DABC2;--rule:#25324A;--accent:#5AB0FF;--on-accent:#06121F;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Schibsted Grotesk","Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+main{max-width:440px;margin:0 auto;padding:max(28px,env(safe-area-inset-top)) max(20px,env(safe-area-inset-right)) 40px max(20px,env(safe-area-inset-left))}
+.top{display:flex;align-items:center;gap:16px}
+img{width:84px;height:84px;border-radius:50%;object-fit:cover;object-position:50% 30%;border:2px solid var(--accent)}
+h1{font-weight:800;font-size:1.75rem;line-height:1.05;letter-spacing:-.03em;color:var(--accent);margin:0}
+.roles{margin:18px 0 22px;color:var(--soft);font-size:.95rem}
+.roles p{margin:0 0 4px}
+.btns{display:grid;gap:10px}
+a.b{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-radius:12px;border:1px solid var(--rule);background:var(--surface);color:var(--ink);text-decoration:none;font-weight:600}
+a.b.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+a.b span:last-child{opacity:.7}
+.email{margin-top:20px;font-size:.92rem;color:var(--soft);text-align:center;user-select:all}
+</style>
+</head>
+<body>
+<main>
+  <div class="top">
+    <img src="/portrait.jpg" alt="Dr Ben Chester Cheong">
+    <h1>Dr Ben Chester Cheong</h1>
+  </div>
+  <div class="roles">
+    <p>Law Lecturer, Singapore University of Social Sciences</p>
+    <p>Fellow, C-EENRG, University of Cambridge</p>
+    <p>Counsel, Sustainability, Rajah &amp; Tann Singapore</p>
+  </div>
+  <div class="btns">
+    <a class="b primary" href="/contact.vcf" download="Ben-Chester-Cheong.vcf"><span>Save contact to phone</span><span>↓</span></a>
+    <a class="b" href="https://www.linkedin.com/in/benchestercheong/" target="_blank" rel="noopener"><span>Connect on LinkedIn</span><span>↗</span></a>
+    <a class="b" href="/"><span>Website &amp; publications</span><span>→</span></a>
+    <a class="b" href="https://scholar.google.com/citations?user=bVHXJt0AAAAJ&amp;hl=en" target="_blank" rel="noopener"><span>Google Scholar</span><span>↗</span></a>
+    <a class="b" id="mail" href="#"><span>Email</span><span>✉</span></a>
+  </div>
+  <p class="email" id="addr"></p>
+</main>
+<script>
+(function(){var u='founder',d='benchestercheong.com',e=u+'@'+d;document.getElementById('mail').href='mailto:'+e;document.getElementById('addr').textContent=e;})();
+</script>
+<script data-goatcounter="https://benchestercheong.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
