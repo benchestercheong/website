@@ -92,7 +92,7 @@ body{margin:0} img{max-width:100%} [hidden]{display:none!important}
   --accent:#0B63CE; --on-accent:#FFFFFF; --hl:#FFE58F;
   --s1:#FCF1DC; --s2:#F6E2BF; --s-line:#E3C493;
   --t-climate:#0EA371; --t-corporate:#F29D00; --t-tech:#5B4BF5; --t-public:#F0436A;
-  --cover:#13233F; --cover-ink:#FFFFFF;
+  --cover:#13233F; --cover-ink:#FFFFFF; --qr-bg:#FFFFFF;
   --f-display:"Libre Caslon Display","Libre Caslon Text",Georgia,"Times New Roman",serif;
   --f-text:"Libre Caslon Text",Georgia,"Times New Roman",serif;
   --f-body:"Schibsted Grotesk","Helvetica Neue",Arial,sans-serif;
@@ -146,7 +146,7 @@ button{font:inherit;color:inherit}
 .hero{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);gap:56px;padding-block:48px 80px;align-items:start}
 @media (max-width:940px){.hero{grid-template-columns:minmax(0,1fr);gap:44px;padding-block:32px 64px}}
 .eyebrow{font:500 .74rem/1.5 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin:0}
-h1{font-family:var(--f-body);font-weight:800;font-size:clamp(2.4rem,5.2vw,4.3rem);line-height:.98;letter-spacing:-.035em;color:var(--accent);margin:20px 0 0;text-wrap:balance}
+h1{font-family:var(--f-body);font-weight:800;font-size:clamp(2.1rem,4.4vw,3.65rem);line-height:.98;letter-spacing:-.035em;color:var(--accent);margin:20px 0 0;text-wrap:balance}
 h1 em{display:block;font-family:var(--f-text);font-style:italic;font-size:.9em;letter-spacing:-.025em;color:var(--accent)}
 .ident{display:flex;align-items:center;gap:18px}
 .portrait{width:112px;height:140px;object-fit:cover;object-position:50% 30%;border-radius:12px;border:1px solid var(--rule);background:var(--s1);flex:none;box-shadow:0 1px 2px rgb(0 0 0 / .06)}
@@ -342,6 +342,10 @@ h1 em{display:block;font-family:var(--f-text);font-style:italic;font-size:.9em;l
 .regions .pct{font:500 .76rem var(--f-mono);color:var(--ink-soft);text-align:right;font-variant-numeric:tabular-nums}
 
 /* Contact */
+.qr{display:flex;align-items:center;gap:18px;margin-top:28px;text-decoration:none;color:var(--ink)}
+.qr img{width:128px;height:128px;max-width:100%;padding:8px;background:var(--qr-bg);border:1px solid var(--rule);border-radius:12px;flex:none}
+.qr b{display:block;font-weight:600}
+.qr span span{color:var(--ink-soft);font-size:.88rem}
 .contact{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:56px;align-items:start;padding-bottom:56px}
 @media (max-width:820px){.contact{grid-template-columns:minmax(0,1fr);gap:36px}}
 .email{font:400 clamp(1.5rem,3.6vw,2.4rem)/1.2 var(--f-display);overflow-wrap:anywhere;user-select:all;margin:0 0 14px;display:block}
@@ -602,6 +606,7 @@ h1 em{display:block;font-family:var(--f-text);font-style:italic;font-size:.9em;l
         <p class="prose">For board and advisory roles, speaking, media comment or research collaboration, email me.</p>
         <span class="email" id="email" data-u="founder" data-d="benchestercheong.com">founder [at] benchestercheong.com</span>
         <button class="btn btn-ghost" type="button" id="copy-email">Copy email address</button>
+        <a class="qr" href="/card/"><img src="qr-card.svg" alt="QR code linking to Ben Chester Cheong's digital contact card" width="128" height="128"><span><b>Scan to save my contact</b><span>Opens my digital card on your phone, with one tap to add me to your contacts.</span></span></a>
       </div>
       <div>
         <p class="label" style="margin-bottom:10px">Profiles</p>
