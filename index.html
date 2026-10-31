@@ -653,7 +653,7 @@ h1 em{display:block;font-family:var(--f-text);font-style:italic;font-size:.9em;l
     </div>
     <div class="wrap">
       <div class="visits" id="visits" hidden>
-        <div><p class="label">Visitors</p><span class="visits-n" id="visits-n">–</span></div>
+        <div><p class="label">Visits</p><span class="visits-n" id="visits-n">–</span></div>
         <div id="regions-wrap" hidden><p class="label" id="regions-label">Where visitors come from</p><ul class="regions" id="regions"></ul></div>
       </div>
       <footer class="site-foot"><span>© <span id="yr-now">2026</span> Ben Chester Cheong</span><span>Publication list updated <span id="updated">30 October 2026</span></span></footer>
@@ -1144,11 +1144,17 @@ h1 em{display:block;font-family:var(--f-text);font-style:italic;font-size:.9em;l
       if (v.asOf) $('#regions-label').textContent = 'Where visitors come from (to ' + new Date(v.asOf + 'T12:00:00').toLocaleDateString('en-GB', {day:'numeric', month:'long', year:'numeric'}) + ')';
       $('#regions-wrap').hidden = false; box.hidden = false;
     }
-    try {
-      fetch(GC + '/counter/TOTAL.json').then(function(r){ return r.ok ? r.json() : null; }).then(function(j){
-        if (j && j.count_unique && j.count_unique !== '0'){ $('#visits-n').textContent = j.count_unique; box.hidden = false; }
-      }).catch(function(){});
-    } catch(e){}
+    function showCount(){
+      try {
+        fetch(GC + '/counter/TOTAL.json?t=' + Date.now(), {cache: 'no-store'}).then(function(r){ return r.ok ? r.json() : null; }).then(function(j){
+          var c = j && (j.count || j.count_unique);
+          if (c && String(c).replace(/\D/g, '') !== '0'){ $('#visits-n').textContent = c; box.hidden = false; }
+        }).catch(function(){});
+      } catch(e){}
+    }
+    /* wait until this visit has been recorded, so the number includes it */
+    if (document.readyState === 'complete') setTimeout(showCount, 1500);
+    else window.addEventListener('load', function(){ setTimeout(showCount, 1500); });
   })();
 
   try { if (DATA.citations && DATA.citations.count) $('#cites').textContent = DATA.citations.count; } catch(e){}
