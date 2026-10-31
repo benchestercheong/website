@@ -418,7 +418,7 @@ h1 em{display:block;font-family:var(--f-text);font-style:italic;font-size:.9em;l
 <body>
 <header class="site-head dark-zone" id="top">
   <div class="wrap head-row">
-    <a class="brand" href="#top">Dr Ben Chester Cheong</a>
+    <a class="brand" href="#top" id="brand-top">Dr Ben Chester Cheong</a>
     <nav class="nav" aria-label="Sections">
       <a href="#research">Research</a>
       <a href="#publications">Publications</a>
@@ -1250,5 +1250,13 @@ h1 em{display:block;font-family:var(--f-text);font-style:italic;font-size:.9em;l
 </script>
 
 <script data-goatcounter="https://benchestercheong.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script>
+document.getElementById('brand-top').addEventListener('click', function(e){
+  e.preventDefault();
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  window.scrollTo({top: 0, behavior: reduce ? 'auto' : 'smooth'});
+  if (history.replaceState) history.replaceState(null, '', location.pathname + location.search);
+});
+</script>
 </body>
 </html>
