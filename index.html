@@ -1144,17 +1144,15 @@ h1 em{display:block;font-family:var(--f-text);font-style:italic;font-size:.9em;l
       if (v.asOf) $('#regions-label').textContent = 'Where visitors come from (to ' + new Date(v.asOf + 'T12:00:00').toLocaleDateString('en-GB', {day:'numeric', month:'long', year:'numeric'}) + ')';
       $('#regions-wrap').hidden = false; box.hidden = false;
     }
-    function showCount(){
-      try {
-        fetch(GC + '/counter/TOTAL.json?t=' + Date.now(), {cache: 'no-store'}).then(function(r){ return r.ok ? r.json() : null; }).then(function(j){
-          var c = j && (j.count || j.count_unique);
-          if (c && String(c).replace(/\D/g, '') !== '0'){ $('#visits-n').textContent = c; box.hidden = false; }
-        }).catch(function(){});
-      } catch(e){}
-    }
-    /* wait until this visit has been recorded, so the number includes it */
-    if (document.readyState === 'complete') setTimeout(showCount, 1500);
-    else window.addEventListener('load', function(){ setTimeout(showCount, 1500); });
+    /* Live visit counter: +1 on every page load (abacus.jasoncameron.dev, no cookies).
+       GoatCounter above stays as the private statistics dashboard. */
+    function show(n){ if (n > 0){ $('#visits-n').textContent = Number(n).toLocaleString('en-GB'); box.hidden = false; } }
+    try {
+      fetch('https://abacus.jasoncameron.dev/hit/benchestercheong/visits', {cache: 'no-store'})
+        .then(function(r){ return r.ok ? r.json() : null; })
+        .then(function(j){ if (j && j.value) show(j.value); })
+        .catch(function(){});
+    } catch(e){}
   })();
 
   try { if (DATA.citations && DATA.citations.count) $('#cites').textContent = DATA.citations.count; } catch(e){}
