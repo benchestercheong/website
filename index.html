@@ -543,6 +543,7 @@ h1 em{display:block;font-family:var(--f-text);font-style:italic;font-size:.9em;l
       <ol class="timeline">
         <li class="tl-row"><span class="tl-year">Now</span><ul class="tl-events">
           <li class="tl-ev"><span>Counsel, Sustainability practice, Rajah &amp; Tann Singapore</span><span class="tag">Practice</span></li>
+          <li class="ph-strip" aria-label="Photo: Rajah &amp; Tann announcement"><button class="ph-thumb" type="button" data-i="4" aria-label="View photo: Joined Rajah &amp; Tann Singapore as Counsel, Sustainability, on 1 April 2026"><img src="photos/rt-welcome-thumb.jpg" alt="" width="64" height="64" loading="lazy"></button><span class="ph-note">Announcement</span></li>
           <li class="tl-ev"><span>Fellow, C-EENRG, University of Cambridge</span><span class="tag">Appointment</span></li>
           <li class="tl-ev"><span>Associate Academic Fellow, Asia-Pacific Centre for Environmental Law, National University of Singapore</span><span class="tag">Appointment</span></li>
         </ul></li>
@@ -1086,19 +1087,22 @@ h1 em{display:block;font-family:var(--f-text);font-style:italic;font-size:.9em;l
 
   /* ---------- Photo lightbox ---------- */
   (function(){
-    var PH = [{"src":"photos/cam-supervisor.jpg","cap":"With my PhD supervisor, Prof Jorge E Viñuales, at Sticks’n’Sushi, Cambridge"},
-{"src":"photos/cam-bristow.jpg","cap":"With Sir Laurie Bristow, President of Hughes Hall and former British Ambassador to Afghanistan"},
-{"src":"photos/cam-senate-house.jpg","cap":"PhD graduation, Senate House, University of Cambridge, 25 July 2026"},
-{"src":"photos/cam-scarlet.jpg","cap":"In doctoral scarlet at Hughes Hall, a Cambridge tradition for new doctors"}];
+    var PH = [{"src":"photos/cam-supervisor.jpg","g":"c","cap":"With my PhD supervisor, Prof Jorge E Viñuales, at Sticks’n’Sushi, Cambridge"},
+{"src":"photos/cam-bristow.jpg","g":"c","cap":"With Sir Laurie Bristow, President of Hughes Hall and former British Ambassador to Afghanistan"},
+{"src":"photos/cam-senate-house.jpg","g":"c","cap":"PhD graduation, Senate House, University of Cambridge, 25 July 2026"},
+{"src":"photos/cam-scarlet.jpg","g":"c","cap":"In doctoral scarlet at Hughes Hall, a Cambridge tradition for new doctors"},
+{"src":"photos/rt-welcome.jpg","g":"r","cap":"Joined Rajah & Tann Singapore as Counsel, Sustainability, on 1 April 2026"}];
     var dlg = document.getElementById('lightbox'), img = $('#lb-img'), cap = $('#lb-cap'), cur = 0;
     if (!dlg || !dlg.showModal) return;
-    function show(i){ cur = (i + PH.length) % PH.length; img.src = PH[cur].src; img.alt = PH[cur].cap; cap.textContent = PH[cur].cap; }
+    function group(){ var g = PH[cur].g, idx = []; PH.forEach(function(p, k){ if (p.g === g) idx.push(k); }); return idx; }
+    function show(i){ cur = i; img.src = PH[cur].src; img.alt = PH[cur].cap; cap.textContent = PH[cur].cap; var n = group().length > 1; $('#lb-prev').hidden = !n; $('#lb-next').hidden = !n; }
+    function step(d){ var idx = group(), k = idx.indexOf(cur); show(idx[(k + d + idx.length) % idx.length]); }
     $$('.ph-thumb').forEach(function(b){ b.addEventListener('click', function(){ show(+b.dataset.i); dlg.showModal(); }); });
-    $('#lb-prev').addEventListener('click', function(){ show(cur - 1); });
-    $('#lb-next').addEventListener('click', function(){ show(cur + 1); });
+    $('#lb-prev').addEventListener('click', function(){ step(-1); });
+    $('#lb-next').addEventListener('click', function(){ step(1); });
     $('#lb-close').addEventListener('click', function(){ dlg.close(); });
     dlg.addEventListener('click', function(e){ if (e.target === dlg) dlg.close(); });
-    dlg.addEventListener('keydown', function(e){ if (e.key === 'ArrowLeft') show(cur - 1); if (e.key === 'ArrowRight') show(cur + 1); });
+    dlg.addEventListener('keydown', function(e){ if (e.key === 'ArrowLeft') step(-1); if (e.key === 'ArrowRight') step(1); });
   })();
 
   /* ---------- Visitors ---------- */
