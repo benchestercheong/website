@@ -412,6 +412,29 @@ h1 em{display:block;font-family:var(--f-text);font-style:italic;font-size:.9em;l
 .hero-zone .btn-ghost:hover{border-color:var(--ink)}
 .hero-zone .stat-n{font-variant-numeric:lining-nums proportional-nums;padding-right:.12em;margin-right:-.12em;background:linear-gradient(180deg,var(--num-a),var(--num-b));-webkit-background-clip:text;background-clip:text;color:transparent}
 .sec-h::before{content:counter(sec,decimal-leading-zero);display:block;font:500 .78rem/1 var(--f-mono);letter-spacing:.16em;color:var(--accent);margin:0 0 16px}
+
+/* Leading journals */
+.lj-book{display:block;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--rule);border-left:4px solid var(--accent);border-radius:14px;padding:22px 26px;max-width:900px;margin:0 0 22px;transition:border-color .2s}
+.lj-book:hover{border-color:var(--accent)}
+.lj-kicker{display:block;font:500 .7rem/1.5 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.lj-bt{display:block;font:700 clamp(1.3rem,2.6vw,1.7rem)/1.15 var(--f-display);letter-spacing:-.025em;margin-top:6px}
+.lj-bs{display:block;color:var(--ink-soft);margin-top:4px;font-style:italic}
+.lj-list{list-style:none;margin:0;padding:0;max-width:900px;border-top:1px solid var(--rule)}
+.lj-row{display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:16px;align-items:start;padding:16px 4px;border-bottom:1px solid var(--rule);text-decoration:none;color:var(--ink);transition:background .15s}
+.lj-row:hover{background:var(--surface)}
+.lj-row:hover .lj-j{color:var(--accent)}
+.lj-yr{font:500 .85rem/1.6 var(--f-mono);color:var(--ink-soft)}
+.lj-main{display:flex;flex-direction:column;min-width:0}
+.lj-j{font:700 1.12rem/1.3 var(--f-display);letter-spacing:-.015em;transition:color .15s}
+.lj-pub{font:500 .7rem/1.6 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin-top:2px}
+.lj-t{font-size:.95rem;line-height:1.45;color:var(--ink-soft);margin-top:6px;text-wrap:pretty}
+.lj-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;align-items:center}
+.lj-tag{font:600 .7rem/1 var(--f-body);padding:5px 9px;border-radius:999px;background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--accent)}
+.lj-prize{background:color-mix(in srgb,var(--t-climate) 14%,transparent);color:var(--t-climate)}
+.lj-co{font-size:.8rem;color:var(--ink-soft)}
+.lj-arrow{color:var(--ink-soft);font-size:.9rem;padding-top:4px}
+#journals .link-btn{margin-top:18px}
+@media (max-width:600px){.lj-row{grid-template-columns:44px minmax(0,1fr);}.lj-arrow{display:none}.lj-book{padding:18px}}
 </style>
 
 </head>
@@ -420,6 +443,7 @@ h1 em{display:block;font-family:var(--f-text);font-style:italic;font-size:.9em;l
   <div class="wrap head-row">
     <a class="brand" href="#top" id="brand-top">Dr Ben Chester Cheong</a>
     <nav class="nav" aria-label="Sections">
+      <a href="#journals">Journals</a>
       <a href="#research">Research</a>
       <a href="#publications">Publications</a>
       <a href="#career">Career</a>
@@ -500,6 +524,66 @@ h1 em{display:block;font-family:var(--f-text);font-style:italic;font-size:.9em;l
     </div>
   </section>
 
+  <section class="sec" id="journals" aria-labelledby="journals-h">
+    <div class="wrap">
+      <h2 class="sec-h" id="journals-h">Leading journals</h2>
+      <p class="sec-intro">A monograph and articles in leading international law journals, most of them sole-authored.</p>
+      <a class="lj-book" href="https://link.springer.com/book/10.1007/978-3-032-41361-1" target="_blank" rel="noopener">
+        <span class="lj-kicker">Monograph · Springer · 2026</span>
+        <span class="lj-bt">Legal Personhood in the Anthropocene</span>
+        <span class="lj-bs">An ESG Approach to Legal Recognition</span>
+        <span class="lj-meta"><span class="lj-tag">Sole author</span></span>
+      </a>
+      <ol class="lj-list">
+        <li><a class="lj-row" href="https://doi.org/10.1080/14735970.2026.2729989" target="_blank" rel="noopener">
+          <span class="lj-yr">2026</span>
+          <span class="lj-main"><span class="lj-j">Journal of Corporate Law Studies</span><span class="lj-pub">Taylor &amp; Francis</span><span class="lj-t">Corporate systems liability and English attribution doctrine: Productivity Partners v ACCC and the implicit systems turn in English law</span><span class="lj-meta"><span class="lj-tag">Sole author</span></span></span>
+          <span class="lj-arrow" aria-hidden="true">↗</span></a></li>
+        <li><a class="lj-row" href="https://www.cambridge.org/core/services/aop-cambridge-core/content/view/CC79043F63C8D4FEB84B69E771048369/S3033373326100544a.pdf/the-liability-vacuum-why-existing-legal-frameworks-cannot-govern-artificial-general-intelligence-and-what-must-be-done.pdf" target="_blank" rel="noopener">
+          <span class="lj-yr">2026</span>
+          <span class="lj-main"><span class="lj-j">Cambridge Forum on AI: Law and Governance</span><span class="lj-pub">Cambridge University Press</span><span class="lj-t">The liability vacuum: why existing legal frameworks cannot govern artificial general intelligence and what must be done</span><span class="lj-meta"><span class="lj-tag">Sole author</span></span></span>
+          <span class="lj-arrow" aria-hidden="true">↗</span></a></li>
+        <li><a class="lj-row" href="https://doi.org/10.1093/jel/eqae033" target="_blank" rel="noopener">
+          <span class="lj-yr">2025</span>
+          <span class="lj-main"><span class="lj-j">Journal of Environmental Law</span><span class="lj-pub">Oxford University Press</span><span class="lj-t">A Theoretical Framework for Transformative Corporate Intergenerational Equity</span><span class="lj-meta"><span class="lj-tag">Sole author</span></span></span>
+          <span class="lj-arrow" aria-hidden="true">↗</span></a></li>
+        <li><a class="lj-row" href="https://doi.org/10.1017/S2047102525000032" target="_blank" rel="noopener">
+          <span class="lj-yr">2025</span>
+          <span class="lj-main"><span class="lj-j">Transnational Environmental Law</span><span class="lj-pub">Cambridge University Press</span><span class="lj-t">Bending the Arc of Law: Positivism Meets Climate Change’s Intergenerational Challenge</span><span class="lj-meta"><span class="lj-tag">Sole author</span><span class="lj-tag lj-prize">Best Article Prize shortlist</span></span></span>
+          <span class="lj-arrow" aria-hidden="true">↗</span></a></li>
+        <li><a class="lj-row" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4852004" target="_blank" rel="noopener">
+          <span class="lj-yr">2025</span>
+          <span class="lj-main"><span class="lj-j">Journal of Business Law</span><span class="lj-pub">Sweet &amp; Maxwell</span><span class="lj-t">Sowing Seeds of Change: Intergenerational Justice in Corporate Law and Governance</span><span class="lj-meta"><span class="lj-tag">Sole author</span></span></span>
+          <span class="lj-arrow" aria-hidden="true">↗</span></a></li>
+        <li><a class="lj-row" href="https://www.repository.cam.ac.uk/items/bbe93e73-41de-4ba2-81ba-7f765bd5f291" target="_blank" rel="noopener">
+          <span class="lj-yr">2024</span>
+          <span class="lj-main"><span class="lj-j">Law Quarterly Review</span><span class="lj-pub">Sweet &amp; Maxwell</span><span class="lj-t">Personal Data Breach Claims for Emotional Distress and Loss of Control in the Singapore Court of Appeal</span><span class="lj-meta"><span class="lj-co">with Khairul Anwar</span></span></span>
+          <span class="lj-arrow" aria-hidden="true">↗</span></a></li>
+        <li><a class="lj-row" href="https://doi.org/10.1093/slr/hmae038" target="_blank" rel="noopener">
+          <span class="lj-yr">2024</span>
+          <span class="lj-main"><span class="lj-j">Statute Law Review</span><span class="lj-pub">Oxford University Press</span><span class="lj-t">Climate Volatility, Foundational Freedoms, and the Environment Act 2021: The Transformative Potential of the Principle of Legality</span><span class="lj-meta"><span class="lj-tag">Sole author</span></span></span>
+          <span class="lj-arrow" aria-hidden="true">↗</span></a></li>
+        <li><a class="lj-row" href="https://academic.oup.com/cmlj/article-abstract/19/4/352/7754850" target="_blank" rel="noopener">
+          <span class="lj-yr">2024</span>
+          <span class="lj-main"><span class="lj-j">Capital Markets Law Journal</span><span class="lj-pub">Oxford University Press</span><span class="lj-t">The Doctrine of Corporate Conscience: Navigating the Labyrinth of ESG Litigation in the Quest for Sustainability and Justice</span><span class="lj-meta"><span class="lj-tag">Sole author</span></span></span>
+          <span class="lj-arrow" aria-hidden="true">↗</span></a></li>
+        <li><a class="lj-row" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4541062" target="_blank" rel="noopener">
+          <span class="lj-yr">2023</span>
+          <span class="lj-main"><span class="lj-j">Journal of Business Law</span><span class="lj-pub">Sweet &amp; Maxwell</span><span class="lj-t">The Proper Basis for the Reflective Loss Principle in Singapore</span><span class="lj-meta"><span class="lj-co">with Lin Kunhe</span></span></span>
+          <span class="lj-arrow" aria-hidden="true">↗</span></a></li>
+        <li><a class="lj-row" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4016918" target="_blank" rel="noopener">
+          <span class="lj-yr">2022</span>
+          <span class="lj-main"><span class="lj-j">Singapore Academy of Law Journal</span><span class="lj-pub">Singapore Academy of Law</span><span class="lj-t">The Quintet of Cases on Breaches of Fiduciary Duties, Causation and Abuse of Process: Clarifications from the Court of Appeal in Beyonics Asia Pacific Ltd v Goh Chan Peng [2021] SGCA(I) 2</span><span class="lj-meta"><span class="lj-co">with Muhammad Jahabar</span></span></span>
+          <span class="lj-arrow" aria-hidden="true">↗</span></a></li>
+        <li><a class="lj-row" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4139345" target="_blank" rel="noopener">
+          <span class="lj-yr">2022</span>
+          <span class="lj-main"><span class="lj-j">Singapore Academy of Law Journal</span><span class="lj-pub">Singapore Academy of Law</span><span class="lj-t">Rectification of Contracts Arising from Common Mistake: Sun Electric Pte Ltd v Menrva Solutions Pte Ltd [2021] 5 SLR 648</span><span class="lj-meta"><span class="lj-co">with Lydia Lee</span></span></span>
+          <span class="lj-arrow" aria-hidden="true">↗</span></a></li>
+      </ol>
+      <button class="link-btn" type="button" data-type-key="leading" data-jump>Show these in the full publication list</button>
+    </div>
+  </section>
+
   <section class="sec" id="research" aria-labelledby="research-h">
     <div class="wrap">
       <h2 class="sec-h" id="research-h">Research</h2>
@@ -569,6 +653,7 @@ h1 em{display:block;font-family:var(--f-text);font-style:italic;font-size:.9em;l
         <div class="chip-row" role="group" aria-label="Filter by type">
           <span class="label">Type</span>
           <button class="chip" type="button" data-type-key="all" aria-pressed="true">All</button>
+          <button class="chip" type="button" data-type-key="leading" aria-pressed="false">Leading journals <span class="n" data-type-count="leading"></span></button>
           <button class="chip" type="button" data-type-key="article" aria-pressed="false">Journal articles <span class="n" data-type-count="article"></span></button>
           <button class="chip" type="button" data-type-key="books" aria-pressed="false">Books &amp; chapters <span class="n" data-type-count="books"></span></button>
           <button class="chip" type="button" data-type-key="commentary" aria-pressed="false">Commentary &amp; blogs <span class="n" data-type-count="commentary"></span></button>
@@ -719,10 +804,10 @@ h1 em{display:block;font-family:var(--f-text);font-style:italic;font-size:.9em;l
     "public": {"label": "Public law, policy & education", "short": "Policy"}
   },
   "publications": [
-    {"id":"earth-colaw-2026","year":2026,"type":"article","themes":["climate","corporate"],"title":"The Earth, the Corporation, and the Unfinished Remedy: Human Rights, Environmental Harm, and the Limits of English Law","cite":"(2026) 47(10) Company Lawyer 343","url":"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6876920"},
+    {"id":"systems-jcls-2026","leading":"Taylor & Francis","year":2026,"type":"article","themes":["corporate"],"title":"Corporate systems liability and English attribution doctrine: Productivity Partners v ACCC and the implicit systems turn in English law","cite":"(2026) Journal of Corporate Law Studies 1","url":"https://doi.org/10.1080/14735970.2026.2729989"},
+    {"id":"agi-cfai-2026","leading":"Cambridge University Press","year":2026,"type":"article","themes":["tech"],"title":"The liability vacuum: why existing legal frameworks cannot govern artificial general intelligence and what must be done","cite":"(2026) 2 Cambridge Forum on AI: Law and Governance e19","url":"https://www.cambridge.org/core/services/aop-cambridge-core/content/view/CC79043F63C8D4FEB84B69E771048369/S3033373326100544a.pdf/the-liability-vacuum-why-existing-legal-frameworks-cannot-govern-artificial-general-intelligence-and-what-must-be-done.pdf"},
     {"id":"negligence-colaw-2026","year":2026,"type":"article","themes":["corporate"],"title":"The Criminalisation of Corporate Negligence: A Critical Analysis of Public Prosecutor v Zheng Jia [2025] SGHC 76","cite":"(2026) 47(1) Company Lawyer 3","url":"https://www.repository.cam.ac.uk/items/150f9c1a-c7be-4142-a51e-9f4659b1cbfe"},
-    {"id":"agi-cfai-2026","year":2026,"type":"article","themes":["tech"],"title":"The liability vacuum: why existing legal frameworks cannot govern artificial general intelligence and what must be done","cite":"(2026) 2 Cambridge Forum on AI: Law and Governance e19","url":"https://www.cambridge.org/core/services/aop-cambridge-core/content/view/CC79043F63C8D4FEB84B69E771048369/S3033373326100544a.pdf/the-liability-vacuum-why-existing-legal-frameworks-cannot-govern-artificial-general-intelligence-and-what-must-be-done.pdf"},
-    {"id":"systems-jcls-2026","year":2026,"type":"article","themes":["corporate"],"title":"Corporate systems liability and English attribution doctrine: Productivity Partners v ACCC and the implicit systems turn in English law","cite":"(2026) Journal of Corporate Law Studies 1","url":"https://doi.org/10.1080/14735970.2026.2729989"},
+    {"id":"earth-colaw-2026","year":2026,"type":"article","themes":["climate","corporate"],"title":"The Earth, the Corporation, and the Unfinished Remedy: Human Rights, Environmental Harm, and the Limits of English Law","cite":"(2026) 47(10) Company Lawyer 343","url":"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6876920"},
     {"id":"personhood-springer-2026","year":2026,"type":"book","themes":["climate","corporate"],"title":"Legal Personhood in the Anthropocene: An ESG Approach to Legal Recognition","cite":"(Springer 2026)","url":"https://link.springer.com/book/10.1007/978-3-032-41361-1"},
     {"id":"ejil-review-2026","year":2026,"type":"commentary","themes":["climate","public"],"title":"Lys Kulamadayil, The Pathology of Plenty: Natural Resources in International Law","cite":"(2026) European Journal of International Law (book review)","url":"https://doi.org/10.1093/ejil/chag026"},
     {"id":"st-aidetectors-2026","year":2026,"type":"oped","themes":["tech","public"],"title":"Fuss over AI detectors in university assessments is unnecessary","authors":["Justina Tan","Ben Chester Cheong"],"cite":"The Straits Times (Singapore, 2 November 2026)","url":"https://www.straitstimes.com/opinion/fuss-over-ai-detectors-in-university-assessments-is-unnecessary","free":"https://benchestercheong.com/papers/st-ai-detectors-2026.pdf"},
@@ -756,9 +841,9 @@ h1 em{display:block;font-family:var(--f-text);font-style:italic;font-size:.9em;l
     {"id":"interpretivism-epl-2025","year":2025,"type":"article","themes":["climate","public"],"title":"Understanding Intergenerational Equity through the Prism of Legal Interpretivism: Some Reflections","cite":"(2025) 55(2–3) Environmental Policy and Law 42","url":"https://journals.sagepub.com/doi/full/10.1177/18785395251355070"},
     {"id":"meme-colaw-2025","year":2025,"type":"article","themes":["corporate"],"title":"Shareholder accountability in speculative meme stocks trading: a framework for liability","cite":"(2025) 46(6) Company Lawyer 199","url":"https://www.repository.cam.ac.uk/items/9a1e60fa-1815-48a8-bf6d-74fa09fd473b"},
     {"id":"icj-jpel-2025","year":2025,"type":"article","themes":["climate","public"],"title":"The ICJ’s Climate Change Advisory Opinion: Critical Implications for UK Environmental and Planning Law","cite":"(2025) 12 Journal of Planning & Environment Law 1623","url":"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5743707"},
-    {"id":"sowing-jbl-2025","year":2025,"type":"article","themes":["corporate","climate"],"title":"Sowing Seeds of Change: Intergenerational Justice in Corporate Law and Governance","cite":"[2025] 7 Journal of Business Law 511","url":"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4852004"},
-    {"id":"arc-tel-2025","year":2025,"type":"article","themes":["climate","public"],"title":"Bending the Arc of Law: Positivism Meets Climate Change’s Intergenerational Challenge","cite":"(2025) 14(2) Transnational Environmental Law 285","url":"https://doi.org/10.1017/S2047102525000032"},
-    {"id":"framework-jel-2025","year":2025,"type":"article","themes":["climate","corporate"],"title":"A Theoretical Framework for Transformative Corporate Intergenerational Equity","cite":"(2025) 37(1) Journal of Environmental Law 45","url":"https://doi.org/10.1093/jel/eqae033"},
+    {"id":"sowing-jbl-2025","leading":"Sweet & Maxwell","year":2025,"type":"article","themes":["corporate","climate"],"title":"Sowing Seeds of Change: Intergenerational Justice in Corporate Law and Governance","cite":"[2025] 7 Journal of Business Law 511","url":"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4852004"},
+    {"id":"arc-tel-2025","leading":"Cambridge University Press","year":2025,"type":"article","themes":["climate","public"],"title":"Bending the Arc of Law: Positivism Meets Climate Change’s Intergenerational Challenge","cite":"(2025) 14(2) Transnational Environmental Law 285","url":"https://doi.org/10.1017/S2047102525000032"},
+    {"id":"framework-jel-2025","leading":"Oxford University Press","year":2025,"type":"article","themes":["climate","corporate"],"title":"A Theoretical Framework for Transformative Corporate Intergenerational Equity","cite":"(2025) 37(1) Journal of Environmental Law 45","url":"https://doi.org/10.1093/jel/eqae033"},
     {"id":"carbon-anthropocene-2025","year":2025,"type":"article","themes":["climate"],"title":"The Paradox and Fallacy of Global Carbon Credits: A Theoretical Framework for Strengthening Climate Change Mitigation Strategies","cite":"(2025) 4(1) Anthropocene Science 72","url":"https://link.springer.com/article/10.1007/s44177-025-00084-0"},
     {"id":"supplychain-da-2025","year":2025,"type":"article","themes":["tech","climate"],"title":"Leveraging Blockchain for Enhanced Transparency and Traceability in Sustainable Supply Chains","cite":"(2025) 3 Discover Analytics 6","url":"https://link.springer.com/article/10.1007/s44257-025-00032-7"},
     {"id":"genai-handbook-2025","year":2025,"type":"chapter","themes":["tech"],"title":"Different Regulatory Treatment of Generative AI, Blockchain, Cryptocurrency and NFT","cite":"in David Lee Kuo Chuen and Robert H Deng (eds), Handbook of Blockchain, Digital Finance, and Inclusion, Volume 3: Web3, AI, Privacy and Greentech (Elsevier 2025)","url":"https://www.sciencedirect.com/science/chapter/edited-volume/abs/pii/B978044334717700012X"},
@@ -784,11 +869,11 @@ h1 em{display:block;font-family:var(--f-text);font-style:italic;font-size:.9em;l
     {"id":"bridging-colaw-2024","year":2024,"type":"article","themes":["climate","corporate"],"title":"Bridging the Accountability Gap by Enhancing UK Corporate and Personal Liability for Environmental Harms","cite":"(2024) 45(11) Company Lawyer 363","url":"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4961250"},
     {"id":"cryptoassets-salprac-2024","year":2024,"type":"article","themes":["tech"],"title":"Crypto assets are property, specifically, choses in action, that are capable of being held on trust","authors":["Ben Chester Cheong","Lin Kunhe"],"cite":"[2024] SAL Prac 2","url":"https://journalsonline.academypublishing.org.sg/Journals/SAL-Practitioner/Technology/ctl/eFirstSALPDFJournalView/mid/595/ArticleId/1927/Citation/JournalsOnlinePDF"},
     {"id":"cryptolender-colaw-2024","year":2024,"type":"article","themes":["tech","corporate"],"title":"Cryptocurrency lender allowed extended creditor protection in Singapore: implications of the decision on separate legal entity, sealing applications, scheme of arrangement, and future of debt repayment","authors":["Ben Chester Cheong","Joshua Chan"],"cite":"(2024) 45(1) Company Lawyer 3","url":"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4653229"},
-    {"id":"legality-slr-2024","year":2024,"type":"article","themes":["public","climate"],"title":"Climate Volatility, Foundational Freedoms, and the Environment Act 2021: The Transformative Potential of the Principle of Legality","cite":"(2024) 45(2) Statute Law Review hmae038","url":"https://doi.org/10.1093/slr/hmae038"},
-    {"id":"conscience-cmlj-2024","year":2024,"type":"article","themes":["corporate","climate"],"title":"The Doctrine of Corporate Conscience: Navigating the Labyrinth of ESG Litigation in the Quest for Sustainability and Justice","cite":"(2024) 19(4) Capital Markets Law Journal 352","url":"https://academic.oup.com/cmlj/article-abstract/19/4/352/7754850"},
+    {"id":"legality-slr-2024","leading":"Oxford University Press","year":2024,"type":"article","themes":["public","climate"],"title":"Climate Volatility, Foundational Freedoms, and the Environment Act 2021: The Transformative Potential of the Principle of Legality","cite":"(2024) 45(2) Statute Law Review hmae038","url":"https://doi.org/10.1093/slr/hmae038"},
+    {"id":"conscience-cmlj-2024","leading":"Oxford University Press","year":2024,"type":"article","themes":["corporate","climate"],"title":"The Doctrine of Corporate Conscience: Navigating the Labyrinth of ESG Litigation in the Quest for Sustainability and Justice","cite":"(2024) 19(4) Capital Markets Law Journal 352","url":"https://academic.oup.com/cmlj/article-abstract/19/4/352/7754850"},
     {"id":"finch-jpel-2024","year":2024,"type":"article","themes":["climate"],"title":"UK Supreme Court’s Finch Ruling: A Watershed Moment for Fossil Fuel Projects and Climate Action","cite":"(2024) 10 Journal of Planning and Environment Law 1093","url":"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4961254"},
     {"id":"waste-icclr-2024","year":2024,"type":"article","themes":["corporate","climate"],"title":"Sustainable Corporate Waste: Extending Corporate Legal Responsibility Through a Doctrine of Waste Law","cite":"(2024) 35(10) International Company and Commercial Law Review 581","url":"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4961140"},
-    {"id":"databreach-lqr-2024","year":2024,"type":"article","themes":["tech"],"title":"Personal Data Breach Claims for Emotional Distress and Loss of Control in the Singapore Court of Appeal","authors":["Ben Chester Cheong","Khairul Anwar"],"cite":"(2024) 140 Law Quarterly Review 16","url":"https://www.repository.cam.ac.uk/items/bbe93e73-41de-4ba2-81ba-7f765bd5f291"},
+    {"id":"databreach-lqr-2024","leading":"Sweet & Maxwell","year":2024,"type":"article","themes":["tech"],"title":"Personal Data Breach Claims for Emotional Distress and Loss of Control in the Singapore Court of Appeal","authors":["Ben Chester Cheong","Khairul Anwar"],"cite":"(2024) 140 Law Quarterly Review 16","url":"https://www.repository.cam.ac.uk/items/bbe93e73-41de-4ba2-81ba-7f765bd5f291"},
     {"id":"ai-frontiers-2024","year":2024,"type":"article","themes":["tech"],"title":"Transparency and Accountability in AI Systems: Safeguarding Wellbeing in the Age of Algorithmic Decision-Making","cite":"(2024) 6 Frontiers in Human Dynamics 1421273","url":"https://doi.org/10.3389/fhumd.2024.1421273"},
     {"id":"avatars-jdtl-2024","year":2024,"type":"article","themes":["tech"],"title":"The Rise of AI Avatars: Legal Personhood, Rights and Liabilities in an Evolving Metaverse","cite":"(2024) 2(4) Journal of Digital Technologies and Law 857","url":"https://doi.org/10.21202/jdtl.2024.42"},
     {"id":"carbon-cjcr-2024","year":2024,"type":"article","themes":["climate"],"title":"Analysing Singapore’s Recent Carbon Credits Initiatives","cite":"(2024) 1(1) Cambridge Journal of Climate Research 24","url":"https://assets-global.website-files.com/613cc99a0d6422f59df95950/6632afb97ecc00eb75c7308c_CJCR%20Tentative%20Final%20Draft.pdf"},
@@ -824,7 +909,7 @@ h1 em{display:block;font-family:var(--f-text);font-style:italic;font-size:.9em;l
 
     {"id":"tensions-scribes-2023","year":2023,"type":"article","themes":["public"],"title":"Tensions in Singapore National Security Landscape","cite":"(2023) 1 Legal Scribes 3","url":"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4665669"},
     {"id":"nfts-salprac-2023","year":2023,"type":"article","themes":["tech"],"title":"Doctrinal Issues in Recovering NFTs that Have Been Wrongfully Taken Away","cite":"[2023] SAL Prac 14","url":"https://journalsonline.academypublishing.org.sg/Journals/SAL-Practitioner/Technology/ctl/eFirstSALPDFJournalView/mid/595/ArticleId/1882/Citation/JournalsOnlinePDF"},
-    {"id":"reflective-jbl-2023","year":2023,"type":"article","themes":["corporate"],"title":"The Proper Basis for the Reflective Loss Principle in Singapore","authors":["Ben Chester Cheong","Lin Kunhe"],"cite":"[2023] Journal of Business Law 452","url":"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4541062"},
+    {"id":"reflective-jbl-2023","leading":"Sweet & Maxwell","year":2023,"type":"article","themes":["corporate"],"title":"The Proper Basis for the Reflective Loss Principle in Singapore","authors":["Ben Chester Cheong","Lin Kunhe"],"cite":"[2023] Journal of Business Law 452","url":"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4541062"},
     {"id":"liability-icclr-2023","year":2023,"type":"article","themes":["corporate","climate"],"title":"A Rethink of Corporate Limited Liability to Promote the Corporate Purpose of Sustainable Value Creation","cite":"(2023) 34(6) International Company and Commercial Law Review 351","url":"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4488041"},
     {"id":"psc-colaw-2023","year":2023,"type":"article","themes":["corporate"],"title":"Personal Service Companies and the Tax Avoidance Surcharge in Singapore","authors":["Vincent Ooi","Ben Chester Cheong"],"cite":"(2023) 44(2) Company Lawyer 59"},
     {"id":"teaching-ajle-2023","year":2023,"type":"article","themes":["public"],"title":"Teaching and Engaging Adult Law Learners in a Singapore Business Law Class: A Reflection of Legal Teaching Strategies","cite":"(2023) 10(1) Asian Journal of Legal Education 74","url":"https://doi.org/10.1177/23220058221139063"},
@@ -859,8 +944,8 @@ h1 em{display:block;font-family:var(--f-text);font-style:italic;font-size:.9em;l
     {"id":"avatars-iclr-2022","year":2022,"type":"article","themes":["tech"],"title":"Avatars in the Metaverse: Potential Legal Issues and Remedies","cite":"(2022) 3(2) International Cybersecurity Law Review 467","url":"https://link.springer.com/article/10.1365/s43439-022-00056-9"},
     {"id":"oppression-icclr-2022","year":2022,"type":"article","themes":["corporate"],"title":"Oppression Claims in Family Businesses and the Appropriate Remedy","authors":["Ben Chester Cheong","Nicole Er"],"cite":"(2022) 33(7) International Company and Commercial Law Review 399","url":"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4138813"},
     {"id":"inquorate-colaw-2022","year":2022,"type":"article","themes":["corporate"],"title":"Inquorate Meetings: Recent Developments in Singapore","cite":"(2022) 43(6) Company Lawyer 190","url":"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4109878"},
-    {"id":"rectification-saclj-2022","year":2022,"type":"article","themes":["corporate"],"title":"Rectification of Contracts Arising from Common Mistake: Sun Electric Pte Ltd v Menrva Solutions Pte Ltd [2021] 5 SLR 648","authors":["Ben Chester Cheong","Lydia Lee"],"cite":"(2022) 34 Singapore Academy of Law Journal 654","url":"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4139345"},
-    {"id":"quintet-saclj-2022","year":2022,"type":"article","themes":["corporate"],"title":"The Quintet of Cases on Breaches of Fiduciary Duties, Causation and Abuse of Process: Clarifications from the Court of Appeal in Beyonics Asia Pacific Ltd v Goh Chan Peng [2021] SGCA(I) 2","authors":["Ben Chester Cheong","Muhammad Jahabar"],"cite":"(2022) 34 Singapore Academy of Law Journal 213","url":"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4016918"},
+    {"id":"rectification-saclj-2022","leading":"Singapore Academy of Law","year":2022,"type":"article","themes":["corporate"],"title":"Rectification of Contracts Arising from Common Mistake: Sun Electric Pte Ltd v Menrva Solutions Pte Ltd [2021] 5 SLR 648","authors":["Ben Chester Cheong","Lydia Lee"],"cite":"(2022) 34 Singapore Academy of Law Journal 654","url":"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4139345"},
+    {"id":"quintet-saclj-2022","leading":"Singapore Academy of Law","year":2022,"type":"article","themes":["corporate"],"title":"The Quintet of Cases on Breaches of Fiduciary Duties, Causation and Abuse of Process: Clarifications from the Court of Appeal in Beyonics Asia Pacific Ltd v Goh Chan Peng [2021] SGCA(I) 2","authors":["Ben Chester Cheong","Muhammad Jahabar"],"cite":"(2022) 34 Singapore Academy of Law Journal 213","url":"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4016918"},
     {"id":"judiciary-spj-2022","year":2022,"type":"article","themes":["public"],"title":"Judiciary and Law Enforcement in Singapore Inc.","cite":"Singapore Policy Journal (19 June 2022)","url":"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4144756"},
     {"id":"cloud-gazette-2022","year":2022,"type":"commentary","themes":["tech"],"title":"It Is Not So Cloudy After All: Legal Remedies When Cloud Storage Rains on You","authors":["Ben Chester Cheong","Khairul Anwar"],"cite":"Singapore Law Gazette (September 2022)","url":"https://lawgazette.com.sg/feature/legal-remedies-cloud-storage/"},
     {"id":"spacs-sid-2022","year":2022,"type":"commentary","themes":["corporate"],"title":"The Governance of SPACs and DCS Companies","cite":"SID Directors’ Bulletin (2022 Q3)","url":"https://www.sid.org.sg/images/PDFs/Publications/DirectorsBulletin/2022Q3/TheGovernanceofSPACsandDCSCompanies.pdf"},
@@ -943,6 +1028,7 @@ h1 em{display:block;font-family:var(--f-text);font-style:italic;font-size:.9em;l
   function matches(p){
     if (state.theme && p.themes.indexOf(state.theme) < 0) return false;
     if (state.type === 'books') { if (p.type !== 'book' && p.type !== 'chapter') return false; }
+    else if (state.type === 'leading') { if (!p.leading) return false; }
     else if (state.type !== 'all' && p.type !== state.type) return false;
     if (state.q){
       var hay = (p.title + ' ' + p.cite + ' ' + authorList(p).join(' ') + ' ' + p.year).toLowerCase();
@@ -1096,7 +1182,7 @@ h1 em{display:block;font-family:var(--f-text);font-style:italic;font-size:.9em;l
       apply(); return;
     }
     var ty = e.target.closest('[data-type-key]');
-    if (ty){ state.type = ty.dataset.typeKey; apply(); return; }
+    if (ty){ state.type = ty.dataset.typeKey; if (ty.hasAttribute('data-jump')){ state.theme = null; state.q = ''; $('#pub-q').value = ''; } apply(); if (ty.hasAttribute('data-jump')) document.getElementById('publications').scrollIntoView({behavior: reduce ? 'auto' : 'smooth'}); return; }
     var sh = e.target.closest('[data-show-theme]');
     if (sh){
       state.theme = sh.dataset.showTheme; state.type = 'all'; state.q = ''; $('#pub-q').value = ''; apply();
@@ -1203,6 +1289,7 @@ h1 em{display:block;font-family:var(--f-text);font-style:italic;font-size:.9em;l
   var counts = {pubs: pubs.length - nInterviews, interviews: nInterviews,
     scholarly: pubs.filter(function(p){ return ['article','book','chapter'].indexOf(p.type) >= 0; }).length};
   Object.keys(counts).forEach(function(k){ $$('[data-count="' + k + '"]').forEach(function(el){ el.textContent = counts[k]; }); });
+  $$('[data-type-count="leading"]').forEach(function(el){ el.textContent = pubs.filter(function(p){ return p.leading; }).length; });
   $$('[data-type-count="books"]').forEach(function(el){ el.textContent = pubs.filter(function(p){ return p.type === 'book' || p.type === 'chapter'; }).length; });
   Object.keys(THEMES).forEach(function(k){
     var n = pubs.filter(function(p){ return p.themes.indexOf(k) >= 0; }).length;
