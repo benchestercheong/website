@@ -142,7 +142,9 @@ button{font:inherit;color:inherit}
 .nav a:hover{color:var(--ink)}
 .theme-toggle{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--rule);background:transparent;border-radius:999px;padding:5px 12px;font-size:.8rem;font-weight:500;cursor:pointer;color:var(--ink);flex:none}
 .tt-icon{width:12px;height:12px;border-radius:50%;border:1.5px solid var(--ink);background:linear-gradient(90deg,var(--ink) 50%,transparent 50%)}
-@media (max-width:600px){.brand{display:none}.nav{justify-content:flex-start;gap:18px}}
+@media (max-width:600px){.head-row{flex-wrap:wrap;row-gap:8px;padding-block:10px 8px}.brand{order:1;font-size:1rem}.theme-toggle{order:2;margin-left:auto}.nav{order:3;flex:0 0 100%;justify-content:flex-start;gap:20px;padding-bottom:2px;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent)}}
+.to-top{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:25;width:46px;height:46px;border-radius:50%;border:1px solid var(--rule);background:var(--surface);color:var(--accent);font-size:1.25rem;line-height:1;box-shadow:0 8px 24px -10px rgb(10 40 100 / .45);cursor:pointer;opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .2s,transform .2s}
+.to-top.show{opacity:1;transform:none;pointer-events:auto}
 
 /* Hero */
 .hero{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);gap:56px;padding-block:48px 80px;align-items:start}
@@ -457,6 +459,7 @@ h1 em{display:block;font-family:var(--f-text);font-style:italic;font-size:.9em;l
       <a href="#career">Career</a>
       <a href="#teaching">Teaching</a>
       <a href="#advisory">Advisory</a>
+      <a href="#conferences">Conferences</a>
       <a href="#contact">Contact</a>
     </nav>
     <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch theme"><span class="tt-icon" aria-hidden="true"></span><span class="tt-label">Theme</span></button>
@@ -1270,9 +1273,9 @@ h1 em{display:block;font-family:var(--f-text);font-style:italic;font-size:.9em;l
 {"src":"photos/eng-ndoc.jpg","g":"e","cap":"With Minister Edwin Tong at the Singapore National Day Observance Ceremony, 9 August 2026"},
 {"src":"photos/suss-office.jpg","g":"s","cap":"My office at SUSS"},
 {"src":"photos/mss-networking.jpg","g":"m","cap":"Networking session with members of the Mature Student Society, University of Cambridge"},
-{"src":"photos/conf-cuhk-2026.jpg","g":"c","cap":"Title slide, Conference on Teaching and Learning in Law 2026, CUHK, Hong Kong"},
-{"src":"photos/conf-cuhk-panel.jpg","g":"c","cap":"Presenting at the Conference on Teaching and Learning in Law 2026, CUHK Faculty of Law, Hong Kong, on a panel moderated by Professor Michael Palmer (SOAS University of London)"},
-{"src":"photos/conf-cuhk-lectern.jpg","g":"c","cap":"At the lectern, CUHK Law, 6 November 2026"}];
+{"src":"photos/conf-cuhk-2026.jpg","g":"k","cap":"Title slide, Conference on Teaching and Learning in Law 2026, CUHK, Hong Kong"},
+{"src":"photos/conf-cuhk-panel.jpg","g":"k","cap":"Presenting at the Conference on Teaching and Learning in Law 2026, CUHK Faculty of Law, Hong Kong, on a panel moderated by Professor Michael Palmer (SOAS University of London)"},
+{"src":"photos/conf-cuhk-lectern.jpg","g":"k","cap":"At the lectern, CUHK Law, 6 November 2026"}];
     var dlg = document.getElementById('lightbox'), img = $('#lb-img'), cap = $('#lb-cap'), cur = 0;
     if (!dlg || !dlg.showModal) return;
     function group(){ var g = PH[cur].g, idx = []; PH.forEach(function(p, k){ if (p.g === g) idx.push(k); }); return idx; }
@@ -1366,12 +1369,21 @@ h1 em{display:block;font-family:var(--f-text);font-style:italic;font-size:.9em;l
 
 <script data-goatcounter="https://benchestercheong.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <script>
-document.getElementById('brand-top').addEventListener('click', function(e){
-  e.preventDefault();
+function goTop(e){
+  if (e) e.preventDefault();
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   window.scrollTo({top: 0, behavior: reduce ? 'auto' : 'smooth'});
   if (history.replaceState) history.replaceState(null, '', location.pathname + location.search);
-});
+}
+document.getElementById('brand-top').addEventListener('click', goTop);
+(function(){
+  var b = document.createElement('button');
+  b.type = 'button'; b.className = 'to-top'; b.setAttribute('aria-label', 'Back to top'); b.textContent = '\u2191';
+  b.addEventListener('click', goTop);
+  document.body.appendChild(b);
+  function upd(){ b.classList.toggle('show', window.scrollY > window.innerHeight * 1.5); }
+  window.addEventListener('scroll', upd, {passive: true}); upd();
+})();
 </script>
 </body>
 </html>
