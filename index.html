@@ -435,6 +435,14 @@ h1 em{display:block;font-family:var(--f-text);font-style:italic;font-size:.9em;l
 .lj-arrow{color:var(--ink-soft);font-size:.9rem;padding-top:4px}
 #journals .link-btn{margin-top:18px}
 @media (max-width:600px){.lj-row{grid-template-columns:44px minmax(0,1fr);}.lj-arrow{display:none}.lj-book{padding:18px}}
+
+.conf-list{list-style:none;margin:0;padding:0;max-width:900px;border-top:1px solid var(--rule)}
+.conf-list>li{display:grid;grid-template-columns:130px minmax(0,1fr);gap:18px;padding:18px 4px;border-bottom:1px solid var(--rule)}
+.conf-date{font:500 .8rem/1.6 var(--f-mono);color:var(--ink-soft)}
+.conf-t{margin:0;font:600 1.08rem/1.35 var(--f-display);letter-spacing:-.01em}
+.conf-m{margin:6px 0 0;color:var(--ink-soft);font-size:.95rem;line-height:1.55}
+.conf-main .ph-strip{margin-top:12px}
+@media (max-width:600px){.conf-list>li{grid-template-columns:1fr;gap:6px}}
 </style>
 
 </head>
@@ -752,6 +760,22 @@ h1 em{display:block;font-family:var(--f-text);font-style:italic;font-size:.9em;l
       </ul>
       <p class="label" style="margin:28px 0 10px">Selected engagements</p>
       <div class="ph-strip"><button class="ph-thumb" type="button" data-i="8" aria-label="View photo: With Bartholomew Oram, First Secretary (Illicit Finance Policy), British High Commission, Singapore, January 2026"><img src="photos/eng-bhc-thumb.jpg" alt="" width="64" height="64" loading="lazy"></button><button class="ph-thumb" type="button" data-i="11" aria-label="View photo: With Peter Lee, Partner at Simmons &amp; Simmons and CEO of Simmons Wavelength, over lunch at Hughes Hall, University of Cambridge"><img src="photos/eng-simmons-thumb.jpg" alt="" width="64" height="64" loading="lazy"></button><button class="ph-thumb" type="button" data-i="12" aria-label="View photo: With Lord Carnwath of Notting Hill, former Justice of the UK Supreme Court"><img src="photos/eng-carnwath-thumb.jpg" alt="" width="64" height="64" loading="lazy"></button><button class="ph-thumb" type="button" data-i="13" aria-label="View photo: With Minister Edwin Tong at the Singapore National Day Observance Ceremony, 9 August 2026"><img src="photos/eng-ndoc-thumb.jpg" alt="" width="64" height="64" loading="lazy"></button></div>
+    </div>
+  </section>
+
+  <section class="sec" id="conferences" aria-labelledby="conferences-h">
+    <div class="wrap">
+      <h2 class="sec-h" id="conferences-h">Conferences</h2>
+      <ul class="conf-list">
+        <li>
+          <span class="conf-date">5–7 Nov 2026</span>
+          <div class="conf-main">
+            <p class="conf-t">When AI Removes the Training Ground: Rebuilding Cognitive Apprenticeship in Legal Education</p>
+            <p class="conf-m">Paper presented at the Conference on Teaching and Learning in Law 2026, Faculty of Law, The Chinese University of Hong Kong (Graduate Law Centre, Hong Kong). Panel moderated by Professor Michael Palmer (SOAS University of London).</p>
+            <div class="ph-strip"><button class="ph-thumb" type="button" data-i="16" aria-label="View photo: Title slide, Conference on Teaching and Learning in Law 2026, CUHK, Hong Kong"><img src="photos/conf-cuhk-2026-thumb.jpg" alt="" width="64" height="64" loading="lazy"></button><span class="ph-note">Title slide</span></div>
+          </div>
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -1245,7 +1269,8 @@ h1 em{display:block;font-family:var(--f-text);font-style:italic;font-size:.9em;l
 {"src":"photos/eng-carnwath.jpg","g":"e","cap":"With Lord Carnwath of Notting Hill, former Justice of the UK Supreme Court"},
 {"src":"photos/eng-ndoc.jpg","g":"e","cap":"With Minister Edwin Tong at the Singapore National Day Observance Ceremony, 9 August 2026"},
 {"src":"photos/suss-office.jpg","g":"s","cap":"My office at SUSS"},
-{"src":"photos/mss-networking.jpg","g":"m","cap":"Networking session with members of the Mature Student Society, University of Cambridge"}];
+{"src":"photos/mss-networking.jpg","g":"m","cap":"Networking session with members of the Mature Student Society, University of Cambridge"},
+{"src":"photos/conf-cuhk-2026.jpg","g":"c","cap":"Title slide, Conference on Teaching and Learning in Law 2026, CUHK, Hong Kong"}];
     var dlg = document.getElementById('lightbox'), img = $('#lb-img'), cap = $('#lb-cap'), cur = 0;
     if (!dlg || !dlg.showModal) return;
     function group(){ var g = PH[cur].g, idx = []; PH.forEach(function(p, k){ if (p.g === g) idx.push(k); }); return idx; }
